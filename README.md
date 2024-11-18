@@ -90,6 +90,12 @@ For example, `D` is the third letter in `ANDERSON`, so the name is stored at `[3
 
 ![](https://kxmode.com/images/hash-block-level-3-pointers.png)
 
+Print Hash Blocks
+
+The function print_hash_blocks displays a visual representation of how the strings are stored.
+
+![](https://i.imgur.com/CjJPPIx.png)
+
 ### Example
 For the name "James Smith":
 - Level 1: `J`
