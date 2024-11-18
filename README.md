@@ -4,7 +4,7 @@ Hash Block: A memory-efficient hierarchical data structure that combines static 
 
 Hash Blocks offer an effective way to handle hierarchical data with predictable patterns while keeping memory usage low. By blending the strengths of hash tables and hierarchical tries, they strike an excellent balance between scalability, speed, and efficiency.
 
-Check out my [Medium article](#) for a deeper dive into the concept!
+<!-- Check out my [Medium article](#) for a deeper dive into the concept! -->
 
 ### Purpose of the Code
 
@@ -118,5 +118,7 @@ Run the executable. The arguments can be whatever you wish.
 .\hashblocks4.exe -n apple,banana,grape,watermelon,orange,peach,kiwi, -o peach,watermelon,pear,pomegranate,kiwi
 ```
 
+<!--
 ## Learn More
 For a detailed explanation of Hash Blocks, their design, and use cases, check out my [Medium article](#).
+-->
