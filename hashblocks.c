@@ -18,10 +18,10 @@ HashBlock* create_hash_block();
 HashBlocks* create_hash_blocks();
 
 /// Maps an uppercase character (A-Z) to its zero-based index.
-int char_to_index(char c);
+unsigned int char_to_index(char c);
 
 /// Maps a vowel (A, E, I, O, U, Y) to its corresponding index or a default bucket.
-int vowel_to_index(char c);
+unsigned int vowel_to_index(char c);
 
 /// Creates a new linked list node for storing a name.
 Node* create_node(const char *name);
@@ -233,7 +233,7 @@ int find_names(const char *input_name) {
  * @param c The character to map (assumed to be uppercase).
  * @return The zero-based index corresponding to the character (0-25).
  */
-int char_to_index(char c) {
+unsigned int char_to_index(char c) {
     return c - 'A';
 }
 
@@ -251,7 +251,7 @@ int char_to_index(char c) {
  * @param c The character to map (assumed to be uppercase).
  * @return The index corresponding to the vowel or the default bucket (0-6).
  */
-int vowel_to_index(char c) {
+unsigned int vowel_to_index(char c) {
     switch (c) {
         case 'A': return 0;
         case 'E': return 1;
@@ -320,9 +320,9 @@ int add_name(const char *input_name) {
     }
 
     // Calculate indices for hierarchical hashing
-    int first_index = char_to_index(name[0]);
-    int second_index = vowel_to_index(name[1]);
-    int third_index = char_to_index(name[2]);
+    unsigned int first_index = char_to_index(name[0]);
+    unsigned int second_index = vowel_to_index(name[1]);
+    unsigned int third_index = char_to_index(name[2]);
 
     // Initialize levels if necessary
     if (first_level[first_index] == NULL) {
@@ -471,12 +471,12 @@ int convert_to_upper(const char *input_name, char **output_name) {
  * up memory allocated for the hash structure.
  */
 void free_hash_blocks() {
-    for (int i = 0; i < FIRST_LEVEL_SIZE; i++) {
+    for (unsigned int i = 0; i < FIRST_LEVEL_SIZE; i++) {
         if (first_level[i] != NULL) {
-            for (int j = 0; j < SECOND_LEVEL_SIZE; j++) {
+            for (unsigned int j = 0; j < SECOND_LEVEL_SIZE; j++) {
                 if (first_level[i]->second_level[j] != NULL) {
                     HashBlock *block = first_level[i]->second_level[j];
-                    for (int k = 0; k < THIRD_LEVEL_SIZE; k++) {
+                    for (unsigned int k = 0; k < THIRD_LEVEL_SIZE; k++) {
                         Node *current = block->third_level[k];
                         while (current != NULL) {
                             Node *tmp = current;
@@ -510,10 +510,10 @@ void free_hash_blocks() {
  */
 void print_hash_blocks() {
     printf("\n");
-    for (int i = 0; i < FIRST_LEVEL_SIZE; i++) {
+    for (unsigned int i = 0; i < FIRST_LEVEL_SIZE; i++) {
         if (first_level[i] != NULL) {
             printf("First Level [%c]:\n", 'A' + i);
-            for (int j = 0; j < SECOND_LEVEL_SIZE; j++) {
+            for (unsigned int j = 0; j < SECOND_LEVEL_SIZE; j++) {
                 if (first_level[i]->second_level[j] != NULL) {
                     // Determine the label for the second level
                     const char *label;
@@ -528,7 +528,7 @@ void print_hash_blocks() {
                     }
                     printf("  Second Level [%s]:\n", label);
                     HashBlock *block = first_level[i]->second_level[j];
-                    for (int k = 0; k < THIRD_LEVEL_SIZE; k++) {
+                    for (unsigned int k = 0; k < THIRD_LEVEL_SIZE; k++) {
                         if (block->third_level[k] != NULL) {
                             printf("    Third Level [%c]:\n", 'A' + k);
                             Node *current = block->third_level[k];
