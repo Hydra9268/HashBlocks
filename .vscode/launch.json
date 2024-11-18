@@ -1,0 +1,26 @@
+{
+    "version": "1.0.0",
+    "configurations": [
+        {
+            "name": "Debug with CodeLLDB",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/hashblocks.exe",
+            "args": [
+                "-n",
+                "Alice,Abigail,Anderson",
+                "-o",
+                "Alice,Abigail,Anderson",
+            ],
+            "cwd": "${workspaceFolder}",
+            "stopOnEntry": false,
+            "sourceLanguages": ["c"],
+            "skipFiles": [
+                "<system>",
+                "ucrt/*",
+                "kernel32.dll/*",
+                "ntdll.dll/*"
+            ]
+        }
+    ]
+}

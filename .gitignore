@@ -1,0 +1,8 @@
+# Folder-specific ignores
+assets/
+backup/
+
+# Miscellaneous
+*.exe
+*.ilk
+*.pdb
