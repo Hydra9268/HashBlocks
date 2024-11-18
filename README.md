@@ -117,7 +117,7 @@ clang -std=c17 -g -o hashblocks.exe hashblocks.c
 
 Run the executable. The arguments can be whatever you wish.
 ```
-.\hashblocks4.exe -n apple,banana,grape,watermelon,orange,peach,kiwi -o peach,watermelon,pear,pomegranate,kiwi
+.\hashblocks.exe -n apple,banana,grape,watermelon,orange,peach,kiwi -o peach,watermelon,pear,pomegranate,kiwi
 ```
 
 ## Learn More
