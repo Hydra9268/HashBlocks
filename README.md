@@ -72,7 +72,7 @@ Hash Blocks utilize a hierarchical structure with static arrays at the upper lev
 
 **Level 1 Using Alice, Abigail, Anderson.**
 
-The first letter in their names is `A`, so `[0]` represents `A`, indicated by `{...}` instead of `NULL`.
+The first letter in their names is `A`, so `[0]` represents `A`, indicated by `{...}`.
 
 ![](https://kxmode.com/images/hash-block-level-1.png)
 
