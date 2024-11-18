@@ -31,7 +31,7 @@ typedef struct HashBlocks {
 int add_name(const char *input_name);
 
 /**
- * Searches for a name in the hierarchical hash table.
+ * Searches for a name in the Hash Block.
  * 
  * @param name The name to search for in the structure.
  * @return 0 if the name is found, 1 if the name is not found.
@@ -39,13 +39,13 @@ int add_name(const char *input_name);
 int find_names(const char *name);
 
 /**
- * Prints the current state of the hierarchical hash table.
+ * Prints the current state of the Hash Block.
  * Displays the names stored at each level for visualization and debugging purposes.
  */
 void print_hash_blocks();
 
 /**
- * Frees all memory allocated for the hierarchical hash table.
+ * Frees all memory allocated for the Hash Block.
  * Ensures there are no memory leaks by deallocating all nodes, blocks, and arrays.
  */
 void free_hash_blocks();
